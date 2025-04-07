@@ -24,10 +24,12 @@ Este código fue utilizado para cifrar el mensaje que posteriormente se enviará
    
    ```bash
    python3 cesar.py
+   
 Nota: Si al ejecutar el comando python en lugar de python3 obtienes un error como el siguiente:
 
-bash
+```bash
 zsh: command not found: python
+```
 Asegúrate de usar python3 en lugar de python para ejecutar el script, ya que en algunas configuraciones de macOS, el comando python podría no estar vinculado a Python 3.
 
 El script te pedirá que ingreses el texto a cifrar y el desplazamiento (número entero). Asegúrate de introducir estos datos correctamente para obtener el resultado deseado.
