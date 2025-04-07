@@ -70,33 +70,27 @@ El script realizará primero un ping normal para verificar la conexión y luego 
 Si se realiza correctamente, el script mostrará la respuesta del ping normal y confirmará que el mensaje cifrado fue enviado.
 
 ### 3. **Descifrado Automático del Mensaje**
-En la tercera actividad, se desarrolló un script para intentar descifrar el mensaje oculto en los paquetes cifrados. El script prueba todas las combinaciones posibles de desplazamiento y elige el mensaje más probable basándose en las palabras comunes en español.
+En esta etapa se analizó el archivo de tráfico capturado con Wireshark durante la Actividad 2. El objetivo fue recuperar el mensaje oculto enviado mediante paquetes ICMP (ping), y posteriormente descifrarlo utilizando el mismo método de cifrado César de la Actividad 1.
 
 #### Archivos Relacionados:
-- **`prueba2.py`**: Script que lee los paquetes `.pcapng` y realiza el análisis de descifrado con todas las combinaciones posibles de desplazamiento.
+- **`Trafico_Lab1.pcapng`**: Archivo de captura generado con Wireshark, contiene el mensaje oculto en un paquete ICMP.
+- **`decifrar.py`**: Script en Python que analiza el archivo .pcapng, extrae el contenido de los paquetes ICMP y descifra el mensaje automáticamente usando fuerza bruta sobre el cifrado César.
+- 
+## Descripción
+El script utiliza Scapy para leer el archivo .pcapng y buscar paquetes ICMP con carga útil (Raw). Una vez extraído el mensaje cifrado, se aplica un ataque de fuerza bruta para probar todos los desplazamientos posibles del cifrado César (de 1 a 25), y se selecciona el más probable basándose en la presencia de palabras comunes en español.
 
-## Descripción de los Archivos del Proyecto
+#### Instrucciones de Ejecución:
 
-- **`cesar.py`**: Script para cifrar y descifrar el mensaje utilizando el cifrado César.
-- **`prueba.py`**: Script para transformar cualquier palabra o frase con el cifrado César.
-- **`prueba2.py`**: Script para leer los paquetes `.pcapng` y realizar el análisis de descifrado.
-- **`Trafico_Lab1.pcapng`**: Archivo con el tráfico ICMP capturado.
-- **`README.md`**: Este archivo con la documentación del proyecto.
+1. Ejecuta el script con el siguiente comando:
 
-## Requisitos
+```bash
+sudo python3 decifrar.py Trafico_Lab1.pcapng
+```
+#### Resultado Esperado:
+```bash
+✅ Posible mensaje en claro:
+[Desplazamiento 9] criptografia y seguridad en redes
+```
 
-Para ejecutar los scripts en este proyecto, necesitarás tener instalados los siguientes paquetes de Python:
-
-- **Scapy**: Para el análisis y manipulación de paquetes de red.
-  - Instala Scapy con: `pip install scapy`
-- **Termcolor**: Para imprimir el mensaje descifrado en color.
-  - Instala Termcolor con: `pip install termcolor`
-
-## Cómo Ejecutar el Proyecto
-
-1. Asegúrate de tener el archivo `Trafico_Lab1.pcapng` en el directorio de trabajo.
-2. Ejecuta el script de descifrado con el siguiente comando:
-
-   ```bash
-   sudo python3 prueba2.py Trafico_Lab1.pcapng
-
+Conclusión
+Este laboratorio permitió aplicar conceptos básicos de criptografía para ocultar mensajes en paquetes ICMP, utilizando herramientas como Python, Scapy y Wireshark para el envío, captura y análisis de datos en una red.
