@@ -76,7 +76,7 @@ En esta etapa se analizó el archivo de tráfico capturado con Wireshark durante
 - **`Trafico_Lab1.pcapng`**: Archivo de captura generado con Wireshark, contiene el mensaje oculto en un paquete ICMP.
 - **`decifrar.py`**: Script en Python que analiza el archivo .pcapng, extrae el contenido de los paquetes ICMP y descifra el mensaje automáticamente usando fuerza bruta sobre el cifrado César.
 - 
-## Descripción
+#### Descripción
 El script utiliza Scapy para leer el archivo .pcapng y buscar paquetes ICMP con carga útil (Raw). Una vez extraído el mensaje cifrado, se aplica un ataque de fuerza bruta para probar todos los desplazamientos posibles del cifrado César (de 1 a 25), y se selecciona el más probable basándose en la presencia de palabras comunes en español.
 
 #### Instrucciones de Ejecución:
