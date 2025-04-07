@@ -31,7 +31,7 @@ def leer_paquete_pcapng(archivo_pcapng):
 palabras_comunes = ['el', 'la', 'que', 'en', 'de', 'y', 'los', 'por', 'un', 'una', 'es', 'con', 'para']
 
 # Leer el archivo pcapng y obtener los mensajes
-archivo_pcapng = "Trafico_Lab1.pcapng"  # Nombre del archivo pcapng que contiene los paquetes
+archivo_pcapng = "trafico_filtrado.pcapng"  # Nombre del archivo pcapng que contiene los paquetes
 mensajes_cifrados = leer_paquete_pcapng(archivo_pcapng)
 
 mejor_puntaje = -1
