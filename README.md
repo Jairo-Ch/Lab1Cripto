@@ -36,10 +36,38 @@ El script te pedirá que ingreses el texto a cifrar y el desplazamiento (número
 
 
 ### 2. **Captura de Tráfico ICMP**
-En esta actividad se capturó el tráfico ICMP utilizando herramientas como Wireshark. El archivo de captura resultante se guarda en formato `.pcapng`, el cual contiene los paquetes de red capturados para su posterior análisis.
+En esta actividad, se implementó un sistema para enviar mensajes cifrados a través de un ping ICMP. Utilizando el cifrado César para ocultar el mensaje, enviamos este mensaje oculto a una dirección IP (en este caso, Google: 8.8.8.8) utilizando el protocolo ICMP, que generalmente se usa para realizar pings y verificar la conectividad de red.
 
-#### Archivos Relacionados:
-- **`Trafico_Lab1.pcapng`**: Archivo con el tráfico ICMP capturado.
+Archivos Relacionados:
+ping_script.py: Script utilizado para enviar el ping normal y el ping oculto (stealth) con un mensaje encriptado utilizando el cifrado César.
+
+Descripción:
+En esta sección, se hizo uso del módulo scapy para enviar dos tipos de pings:
+
+Ping Normal: Se envió un ping convencional sin ningún mensaje oculto para verificar la conectividad con la IP de destino.
+
+Ping Oculto (Stealth Ping): Se implementó un ping ICMP que oculta el mensaje cifrado en el paquete de datos. Este mensaje es el mismo que fue cifrado en la actividad anterior con un desplazamiento de 9, y se envía a la dirección IP de destino utilizando un paquete ICMP.
+
+El mensaje cifrado enviado fue:
+
+nginx
+Copiar
+Editar
+larycxpajorj h bnpdarmjm nw anmnb
+Este proceso tiene como objetivo verificar si es posible ocultar un mensaje dentro de los datos del paquete ICMP sin que el receptor pueda identificar fácilmente el contenido sin el descifrado adecuado.
+
+Instrucciones para Ejecución:
+Ejecuta el script con el siguiente comando:
+
+bash
+Copiar
+Editar
+python3 prueba2.py
+El script te pedirá que ingreses la IP de destino (por ejemplo, 8.8.8.8 para Google).
+
+El script realizará primero un ping normal para verificar la conexión y luego enviará el ping con el mensaje oculto cifrado.
+
+Si se realiza correctamente, el script mostrará la respuesta del ping normal y confirmará que el mensaje cifrado fue enviado.
 
 ### 3. **Descifrado Automático del Mensaje**
 En la tercera actividad, se desarrolló un script para intentar descifrar el mensaje oculto en los paquetes cifrados. El script prueba todas las combinaciones posibles de desplazamiento y elige el mensaje más probable basándose en las palabras comunes en español.
