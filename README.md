@@ -1,4 +1,4 @@
-# Lab1Cripto - Laboratorio 1 de Criptografía y Seguridad de Redes
+# Lab1Cripto - Laboratorio 1 de Criptografía y Seguridad e Redes
 
 Este repositorio contiene los códigos, resultados y análisis de tres actividades realizadas en el laboratorio sobre el tráfico ICMP, utilizando técnicas de cifrado y descifrado de mensajes.
 
@@ -27,12 +27,12 @@ Este código fue utilizado para cifrar el mensaje que posteriormente se enviará
 Nota: Si al ejecutar el comando python en lugar de python3 obtienes un error como el siguiente:
 
 bash
-Copiar
-Editar
 zsh: command not found: python
 Asegúrate de usar python3 en lugar de python para ejecutar el script, ya que en algunas configuraciones de macOS, el comando python podría no estar vinculado a Python 3.
 
 El script te pedirá que ingreses el texto a cifrar y el desplazamiento (número entero). Asegúrate de introducir estos datos correctamente para obtener el resultado deseado.
+
+
 ### 2. **Captura de Tráfico ICMP**
 En esta actividad se capturó el tráfico ICMP utilizando herramientas como Wireshark. El archivo de captura resultante se guarda en formato `.pcapng`, el cual contiene los paquetes de red capturados para su posterior análisis.
 
