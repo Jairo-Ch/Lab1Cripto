@@ -38,10 +38,10 @@ El script te pedirá que ingreses el texto a cifrar y el desplazamiento (número
 ### 2. **Captura de Tráfico ICMP**
 En esta actividad, se implementó un sistema para enviar mensajes cifrados a través de un ping ICMP. Utilizando el cifrado César para ocultar el mensaje, enviamos este mensaje oculto a una dirección IP (en este caso, Google: 8.8.8.8) utilizando el protocolo ICMP, que generalmente se usa para realizar pings y verificar la conectividad de red.
 
-Archivos Relacionados:
-ping_script.py: Script utilizado para enviar el ping normal y el ping oculto (stealth) con un mensaje encriptado utilizando el cifrado César.
+#### Archivos Relacionados:
+- **`ping_script.py`**: Script utilizado para enviar el ping normal y el ping oculto (stealth) con un mensaje encriptado utilizando el cifrado César.
 
-Descripción:
+#### Descripción:
 En esta sección, se hizo uso del módulo scapy para enviar dos tipos de pings:
 
 Ping Normal: Se envió un ping convencional sin ningún mensaje oculto para verificar la conectividad con la IP de destino.
@@ -50,19 +50,19 @@ Ping Oculto (Stealth Ping): Se implementó un ping ICMP que oculta el mensaje ci
 
 El mensaje cifrado enviado fue:
 
-nginx
-Copiar
-Editar
+```bash
 larycxpajorj h bnpdarmjm nw anmnb
+```
+
 Este proceso tiene como objetivo verificar si es posible ocultar un mensaje dentro de los datos del paquete ICMP sin que el receptor pueda identificar fácilmente el contenido sin el descifrado adecuado.
 
-Instrucciones para Ejecución:
-Ejecuta el script con el siguiente comando:
+#### Instrucciones de Ejecución:
+1. Ejecuta el script con el siguiente comando:
 
-bash
-Copiar
-Editar
-python3 prueba2.py
+```bash
+sudo python3 ping_script.py
+```
+
 El script te pedirá que ingreses la IP de destino (por ejemplo, 8.8.8.8 para Google).
 
 El script realizará primero un ping normal para verificar la conexión y luego enviará el ping con el mensaje oculto cifrado.
