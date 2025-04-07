@@ -1,4 +1,4 @@
-###Laboratorio 1 de Criptografía y Seguridad en Redes
+## Laboratorio 1 de Criptografía y Seguridad en Redes
 
 Este repositorio contiene los códigos, resultados y análisis de tres actividades realizadas en el laboratorio sobre el tráfico ICMP, utilizando técnicas de cifrado y descifrado de mensajes.
 
