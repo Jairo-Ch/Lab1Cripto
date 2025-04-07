@@ -73,7 +73,7 @@ Si se realiza correctamente, el script mostrará la respuesta del ping normal y 
 En esta etapa se analizó el archivo de tráfico capturado con Wireshark durante la Actividad 2. El objetivo fue recuperar el mensaje oculto enviado mediante paquetes ICMP (ping), y posteriormente descifrarlo utilizando el mismo método de cifrado César de la Actividad 1.
 
 #### Archivos Relacionados:
-- **`Trafico_Lab1.pcapng`**: Archivo de captura generado con Wireshark, contiene el mensaje oculto en un paquete ICMP.
+- **`trafico_filtrado.pcapng`**: Archivo de captura generado con Wireshark, contiene el mensaje oculto en un paquete ICMP.
 - **`decifrar.py`**: Script en Python que analiza el archivo .pcapng, extrae el contenido de los paquetes ICMP y descifra el mensaje automáticamente usando fuerza bruta sobre el cifrado César.
 - 
 #### Descripción
@@ -84,7 +84,7 @@ El script utiliza Scapy para leer el archivo .pcapng y buscar paquetes ICMP con 
 1. Ejecuta el script con el siguiente comando:
 
 ```bash
-sudo python3 decifrar.py Trafico_Lab1.pcapng
+sudo python3 decifrar.py trafico_filtrado.pcapng
 ```
 #### Resultado Esperado:
 ```bash
